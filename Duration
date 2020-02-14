@@ -1,0 +1,32 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        getDuaration(125,45);
+        getDuaration(1000);
+
+
+
+    }
+public static int getDuaration(int minutes , int seconds){
+        if((minutes < 0) && (seconds < 0)||(seconds >59)){
+          return -1;
+        }
+        int hours=minutes/60;
+        int remaignminutes=minutes%60;
+    System.out.println(hours+"h"+remaignminutes+"m"+seconds+"s");
+    return 0;
+}
+    public static int getDuaration(int seconds){
+        if(seconds < 0){
+            return -1;
+        }
+        int minutes = seconds/60;
+        int remaingseconds = seconds % 60;
+        System.out.println(minutes + "m" + remaingseconds + "s");
+        return getDuaration(minutes, remaingseconds);
+
+    }
+
+}

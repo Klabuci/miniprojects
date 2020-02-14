@@ -1,0 +1,41 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+          //Enter your value
+        calcFeetAndInchesToCentimeters(6,0);
+        calcFeetAndInchesToCentimeters(100);
+
+
+    }
+
+    public static double calcFeetAndInchesToCentimeters(double feet , double inches){
+
+        if((feet < 0) && ((inches<0) || (inches>=12))){
+           return -1;
+        }
+
+
+        inches=(12*feet)+inches;
+        double centimeters = inches* 2.54;
+        System.out.println("centimetri: " +centimeters);
+
+        return centimeters;
+
+    }
+    public static double calcFeetAndInchesToCentimeters(double inches){
+        if(inches < 0){
+            return -1;
+        }
+        double feet = (int)inches/12;
+        double remaininginches = (int)inches%12;
+        System.out.println("feet: "+ feet + " inches: "+ remaininginches);
+        return calcFeetAndInchesToCentimeters(feet, remaininginches);
+
+
+    }
+
+
+}

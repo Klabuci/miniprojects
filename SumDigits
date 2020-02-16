@@ -2,7 +2,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-       int number = 1255;
+       int number = 9;
         System.out.println(SumDigits(number));
 
 
@@ -11,6 +11,9 @@ public class Main {
 
     public static int SumDigits(int number){
         int sum = 0;
+        if(number< 10){
+            return -1;
+        }
 
         while(number != 0){
             sum+=number%10;
